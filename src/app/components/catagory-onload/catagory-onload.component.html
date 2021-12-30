@@ -1,0 +1,118 @@
+<div class="pull-left w-100 mb-4 slider-height slider-mt" style="border: 1px solid #ccc;padding: 20px;">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 d-none d-md-block p-0">
+      <div class="catagoryList">
+        <h6>TRENDING CATEGORIES</h6>
+        <ul>
+          <!-- <li *ngFor="let catagory of catagoriesOnLoad">
+            <img width="30px" height="30px" class="rounded-circle mr-2" [src]="catagory.image" />
+            <a>{{ catagory.name }}</a> <i
+              class="pull-right arrow right"></i>
+          </li> -->
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Food & Beverage.jfif" />
+            <a [routerLink]="['../searchresultcategory', 12 ]">Food & Beverage</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Health & Personal Care.jfif" />
+            <a [routerLink]="['../searchresultcategory', 15 ]">Health & Personal Care</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Home Cleaning Products.jfif" />
+            <a [routerLink]="['../searchresultcategory', 16 ]">Home Cleaning Products</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Apparel & Fashion.jfif" />
+            <a [routerLink]="['../searchresultcategory', 2 ]">Apparel & Fashion</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Automobile & Transportation.jfif" />
+            <a [routerLink]="['../searchresultcategory', 3 ]">Automobile & Transportation</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Agriculture & Farming.jfif" />
+            <a [routerLink]="['../searchresultcategory', 1 ]">Agriculture & Farming</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Consumer Elctronic.png" />
+            <a [routerLink]="['../searchresultcategory', 8 ]">Consumer Electronic</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Electronics & Electrical Supplies.png" />
+            <a [routerLink]="['../searchresultcategory', 9 ]">Electronics & Electrical Supplies</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/icon/Pharmaceuticals (PCD).jfif" />
+            <a [routerLink]="['../searchresultcategory', 31 ]">Pharmaceuticals (PCD)</a> 
+            <!-- <i class="pull-right arrow right"></i> -->
+          </li>
+          <!-- screenWidth > 768 ? false : getSubItems() -->
+          <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2 ml-1"
+              src="../../../assets/images/all-cat.jpeg" />
+            <a href="#">All Categories 
+              <i class="pull-right arrow right"></i></a> 
+              <div class="sub-categories float-left">  
+                <ul>      
+                  <li *ngFor="let catagory of categories" class="float-left border-0">
+                    <a [routerLink]="['../searchresultcategory',catagory.id]">{{catagory.name}}</a>  
+                    <!-- <a [routerLink]="['/searchresultcategory', catagory.id]" [queryParams]="{ category: catagory.url}"   
+                      queryParamsHandling="preserve">      
+                      {{catagory.name}}      
+                    </a>                  -->
+                  </li>   
+                </ul>            
+              </div>
+          </li>
+          <!-- <li>
+            <img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/all-cat.jpeg" />
+            <a style="color:darkblue !important;" (click)='toggleDisplayAll()'>
+              {{ displayAll ? 'Hide' : 'Show All'}} Categories
+            </a>           
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <div class="pull-left col-lg-9 col-md-8 pl-lg-0"  id="banners">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <img class="slider-img-responsive" src="../../../assets/images/banner/banner1.jpg"
+            (click)="openAllRealtedBrands(160)" alt="NXT-DevPro_FoodAndBeverages">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img class="slider-img-responsive" src="../../../assets/images/banner/banner2.jpg"
+            (click)="openAllRealtedBrands(1327)" alt="No Caption">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img class="slider-img-responsive" src="../../../assets/images/banner/banner3.jpg"
+            (click)="openAllRealtedBrands(463)" alt="ZOORIK_ApperelAndFaishion">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img class="slider-img-responsive" src="../../../assets/images/banner/banner5.jpeg"
+            (click)="openAllRealtedBrands(28)" alt="Channai Metro">
+        </ng-template>
+        <ng-template ngbSlide>
+          <img class="slider-img-responsive" src="../../../assets/images/banner/banner8.jpg"
+            (click)="openAllRealtedBrands(1253)" alt="Faramz Food">
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>

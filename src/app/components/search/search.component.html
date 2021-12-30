@@ -1,0 +1,170 @@
+ <div class="container">
+  <div class="row py-3">
+    <div class="col-md-3  mb-mobo-2">
+      <a routerLink="/" (click)="moveToTop()">
+        <img src="../../../assets/images/logo.jpeg" class="logo-img" height="50px" />
+      </a>
+      <a href="javascript:void(0)" (click)="openMenu('memu-slide')" class="d-md-none pull-right hamburger"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 d-md-none memu-slide"  [@slideInOut]="animationState">
+            <ul class="nav mobo-menu flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="tel:95605 36206">
+                  <i class="fa fa-phone"></i> +91-95605 36206
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="openDialog('requestcallback')">Request Callback
+                </a>
+              </li>
+              <li class="nav-item" *ngIf="!user">
+                <a class="nav-link" (click)="openDialog('login')">Login</a>
+              </li>
+              <li class="nav-item" *ngIf="!user">
+                <a class="nav-link" routerLink="register" style="color: #4CAF50 !important; "> Join Free</a>
+              </li>
+
+              <li class="nav-item" *ngIf="user">
+                <!-- <a class="nav-link" style="color: #4CAF50 !important; "> Welcome {{user?.name}}</a> -->
+                <div class="dropdown">
+                  <!-- <button>Dropdown</button> -->
+                  <a class="nav-link" style="color: #4CAF50 !important; "> Welcome {{user?.name}}</a>
+                  <div class="dropdown-content">
+                    <a (click)="openDialog('myprofile')">My Profile</a>
+                    <a (click)="openDialog('mybusinessprofile')">My Buiness Profile</a>
+                    <a (click)="openEnquiries()">My Enquiries</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item" *ngIf="user">
+                <a class="nav-link" style="color: #4CAF50 !important; " (click)="logout()"> Log out</a>
+              </li>
+            </ul>
+        </div>
+        <div class="col-md-12 d-md-none">
+          <ul class="nav main-menu-mobo">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)" (click)="openCate('cate-slide')">Trending Categories</a>
+            </li>
+            <li class="nav-item ml-auto">
+              <a class="nav-link" routerLink="distributorleads">Distributors Leads</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-12 d-md-none">
+          <ul class="nav cate-slide"  [@slideInOut]="animationCate">
+            <!-- <li *ngFor="let catagory of catagoriesOnLoad">
+              <img width="30px" height="30px" class="rounded-circle mr-2" [src]="catagory.image" />
+              <a>{{ catagory.name }}</a> <i
+                class="pull-right arrow right"></i>
+            </li> -->
+            <li class="nav-item">
+              <a [routerLink]="['../searchresultcategory', 12 ]"  (click)="openCate('cate-slide')" class="nav-link">
+              <img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Food & Beverage.jfif" />
+              Food &amp; Beverage <i class="pull-right arrow right"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 15 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Health & Personal Care.jfif" /> Health &amp; Personal Care</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 16 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Home Cleaning Products.jfif" /> Home Cleaning Products</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 2 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Apparel & Fashion.jfif" /> Apparel &amp; Fashion</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 3 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Automobile & Transportation.jfif" /> Automobile &amp; Transportation</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 1 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Agriculture & Farming.jfif" /> Agriculture &amp; Farming</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 8 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Consumer Elctronic.png" /> Consumer Elctronic</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 9 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Electronics & Electrical Supplies.png" /> Electronics &amp; Electrical Supplies</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item">
+
+              <a [routerLink]="['../searchresultcategory', 31 ]"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/icon/Pharmaceuticals (PCD).jfif" />  Pharmaceuticals (PCD)</a> <i
+                class="pull-right arrow right"></i>
+            </li>
+            <li class="nav-item" (click)="openPopup()">
+              <a href="#" style="color:darkblue !important;"  (click)="openCate('cate-slide')" class="nav-link"><img width="30px" height="30px" class="rounded-circle mr-2" src="../../../assets/images/all-cat.jpeg" /> All Catagories</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9 col-md-8 my-search-3">
+          <div class="input-group" *ngIf="!router.url.includes('distributorleads')">
+            <input type="text" class="form-control" placeholder="Search products"
+                (keydown.enter)="onKeyDownEvent($event)" style="height: 45px;" [(ngModel)]="keyword" >
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" (click)="searchCategory()"
+                    style="background-color: #208e39;">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-3 col-md-4 pl-md-0 text-lg-right">
+          <button type="button" class="btn btn-success" style="background-color: #fc6600 !important;"
+                        (click)="openDialog('postrequirements')">
+                        Post your requirement
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal modal-category"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="padding: 5px 10px;">
+        <h4 class="modal-title text-center w-100" style="font-size: 18px;">All Categories
+          <button type="button" class="btn float-right p-0" 
+                (click)="closePopup()">
+          x
+        </button>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="sub-categories float-left" style="display: block;">  
+          <ul>      
+            <li *ngFor="let catagory of catagories" class="float-left border-0">
+              <a [routerLink]="['../searchresultcategory', catagory.id ]" (click)="closePopup()">{{catagory.name}}</a>                   
+            </li>   
+          </ul>            
+        </div>
+  
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+

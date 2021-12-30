@@ -1,0 +1,43 @@
+<div class="ContainerPremiumBrands mb-4" #mainCatagories>
+    <div class="ExplorePremiumBrands txt-dark-blue">
+        <strong>Categories</strong>
+    </div>
+    <!-- <ng-container *ngFor="let catagoryCollection of catagories;let isFirst=first; let isLast=last">
+        <div class="row" *ngIf="isFirst || isLast || displayAll">
+            <div class="col-12">
+                <div class="col-2 imageFrame" *ngFor="let item of catagoryCollection">
+                    <a [routerLink]="['../searchresultcategory', item.id ]">
+                        <img class="categories-img rounded-circle"  [src]="item.image" />
+                        <label class="alingCenter">
+                            {{item.name}}
+                        </label>
+                    </a>
+                </div>
+                <div class="col-2 imageFrame" *ngIf="isLast" (click)="toggleDisplayAll()">
+                    <img  class="rounded-circle categories-img" src="../../../assets/images/all-cat.jpeg" />
+                    <label class="alingCenter">
+                      {{ displayAll ? 'Hide' : 'Show All'}} Categories
+                    </label>
+                </div>
+            </div>
+            
+        </div>
+    </ng-container> -->
+    
+            <div class="col-12">
+                <div class="col-2 imageFrame" *ngFor="let item of allCategories | slice:0: showAll ? allCategories.length : 17">
+                    <a [routerLink]="['../searchresultcategory', item.id ]">
+                        <img class="categories-img rounded-circle"  [src]="item.image" />
+                        <label class="alingCenter">
+                            {{item.name}}
+                        </label>
+                    </a>
+                </div>
+                <div class="col-2 imageFrame" (click)="toggleCategories()">
+                    <img  class="rounded-circle categories-img" src="../../../assets/images/all-cat.jpeg" />
+                    <label class="alingCenter">
+                      {{ showAll ? 'Hide' : 'Show All'}} Categories
+                    </label>
+                </div>
+            </div>
+</div>

@@ -1,0 +1,11 @@
+.required {
+  color: red;
+}
+
+.paddingM{margin-top: 50px;}
+@media screen and (min-width:600px) and (max-width: 767px) {
+    .paddingM{margin-top: 48px;}
+  }
+  @media screen and (min-width:300px) and (max-width:479px) {
+    .paddingM{margin-top: 100px;}
+  }

@@ -1,0 +1,29 @@
+.container{
+    /* border:2px solid blue; */
+    text-align:center;
+    background-color:#ffffff;
+    /* height:500px; */
+    width:450px;
+    padding: 20px;
+}
+
+#fgp{
+    cursor: pointer !important;
+}
+
+#fgp:hover {
+    text-decoration: underline;
+}
+
+h1{
+    margin:auto;
+}
+.row{
+    height:90px;
+    width:396px;
+    background-color:#ffffff;
+}
+@media screen and (min-width:300px) and (max-width: 767px) {
+    .row{width: 100%;}
+    .container{width: 100%;}
+  }

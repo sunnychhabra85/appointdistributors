@@ -1,0 +1,54 @@
+<div class="w-100 mt-4 ml-3 card-mobile">
+  <p class="mb-3">{{leads[0]?.countSearchedBrand}} Results found {{catagoryName == null ? '' : 'for ' + catagoryName}}</p>
+
+  <div class="row my-flex-card"> <!-- (scroll)="onScroll($event)" -->
+    <div class="col-sm-6 mb-4" *ngFor="let lead of leads">
+      <div class="card mb-3" style="min-height: 100%;">
+        <div class="" style="padding:10px">
+          <div class="col-md-12">
+            <p><b>Customer Name</b>&nbsp;<i class="fa fa-user" aria-hidden="true"></i> :  {{lead.brandOwner}}</p>
+          </div>
+        </div>
+        <div class="" style="padding:10px; min-height: 210px">
+          <div class="col-md-12">
+            <p>Interested in : {{ lead.productsKeywords }}</p>
+            <p *ngIf="lead.experianceYears > 0 ">Experience : {{ lead.experianceYears }} years</p>
+            <p>Investment <i class="fa fa-inr" aria-hidden="true"></i> : {{ lead.investmentRequired }}</p>
+            <p>Space Available : {{ !lead.spaceRequired ? '100 S.F.' : lead.spaceRequired }}</p>
+            <p>Location : <i class="fa fa-map-marker"></i> {{ lead.distributorshipLocations }}</p>
+          </div>
+        </div>
+        <div class="" style="padding: 10px;position: absolute;bottom: 0;width: 100%; right:0">         
+            <div class="pull-right">
+              <button class="btn btn-primary" (click)="ContactNow(lead.id)">Contact Now</button>
+            </div>        
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-6">
+      <div class="card mb-3" style="max-width: 550px;">
+        <div class="row" style="padding:10px">
+          <div class="col-md-12">
+            <p><b>Customer Name</b>&nbsp;<i class="fa fa-user" aria-hidden="true"></i> :</p>
+          </div>
+        </div>
+        <div class="row" style="padding:10px">
+          <div class="col-md-12">
+            <p>Interested Product names :</p>
+            <p>Investment <i class="fa fa-inr" aria-hidden="true"></i> :</p>
+            <p>Space Required : </p>
+            <p>Location : <i class="fa fa-map-marker"></i> PAN India/States,UP,MP</p>
+          </div>
+        </div>
+        <div class="row" style="padding:10px">
+          <div class="col-md-12">
+            <div class="pull-right">
+              <button class="btn btn-primary">Contact Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

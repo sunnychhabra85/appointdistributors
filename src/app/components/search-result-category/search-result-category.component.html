@@ -1,0 +1,324 @@
+<div class="w-100">  
+  <p class="mb-4">{{ loaderMessage}}</p>
+
+  <div>
+    <div class="row mrb10px" *ngIf="displaySpinner">
+      <div class="col-12 fl">
+        <div class="text-center">
+          <div class="spinner-border"></div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        <div class="box-premium-brand">
+          <div class="col-lg-12">
+          <div class="row">
+         
+              <div class="col-lg-2">
+                <div class="text-center"><img src="../../../assets/images/sponserd.png" class="w-100" alt="" /></div>
+                <div class="text-center"><img src="../../../assets/images/pavitra-logo.png" class="w-100" alt=""></div>
+              </div>
+              <div class="col-lg-8 p-0">
+                <h5 class="text-center color-blue text-uppercase mt-2 font-weight-bolder">Pavitra Organics</h5>
+                <div class="box-premium-brand py-2 px-3">
+                  <h6 class="font-weight-bolder color-blue text-center ">Product Offering</h6>
+                  <p>Powdered Spices, Indian spices blended, Masala Powder, Red Chilli, Turmeric, Cumin, Coriander, Powdered Spices, Indian spices blended, Masala Powder, Red Chilli, Turmeric, Cumin, Coriander</p>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <img src="./../../../assets/images/premium-logo.png" class="w-100 mt-2" />
+              </div>
+          
+          </div>
+        </div>          
+       
+          <div class="col-lg-12">
+          <div class="row my-3">
+            <div class="col-lg-3">
+              <span class="color-blue font-weight-bold">Investment:</span> 3 Lakhs to 5 Lakhs 
+            </div>
+            <div class="col-lg-3">
+              <span class="color-blue font-weight-bold">Space Required:</span> 150 SF
+            </div>
+            <div class="col-lg-3">
+              <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> City:</span> Morbi
+            </div>
+            <div class="col-lg-3">
+              <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> State:</span> Gujrat
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="row brand-box-footer py-2">           
+              <div class="col-lg-4">
+                <img src="../../../assets/images/icon-check.png" alt="" class="float-left" style="width: 40px;">
+                <i class="fa fa-phone-square float-left ml-3 mt-1 color-blue" style="font-size: 30px;" aria-hidden="true"></i>
+                <span class="float-left ml-2 mt-2 color-blue">956063203</span>
+              </div>
+              <div class="col-lg-4 text-center">
+                <button class="btn btn-default bg-orange text-white">View Profile</button>
+              </div>
+              <div class="col-lg-4 text-center">
+                <button class="btn btn-default bg-orange text-white">Send Enquiry</button>
+              </div>             
+          </div>
+        </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+        <div class="col-lg-6">
+        <div class="box-standard-brand">
+          <div class="col-lg-12">
+          <div class="row">           
+              <div class="col-lg-12">
+                <h5 class="color-blue mt-2 font-weight-bolder">Pavitra Organics</h5>                
+              </div>
+              <div class="col-lg-12">
+                <div class="row">
+                <div class="text-center col-lg-3"><img src="../../../assets/images/pavitra-logo.png" class="w-100" alt=""></div>
+                <div class="col-lg-9">                
+                    <h6 class="font-weight-bolder color-blue ">Product Offering</h6>
+                    <p>Powdered Spices, Indian spices blended, Masala Powder, Red Chilli, Turmeric, Cumin, Coriander, Powdered Spices, Indian spices blended, Masala Powder, Red Chilli, Turmeric, Cumin, Coriander</p>
+                 </div>
+              </div>
+              </div>
+          </div>
+        </div>       
+
+          <div class="col-lg-12 mt-3">
+            <span class="color-blue font-weight-bold">Investment:</span> 3 Lakhs to 5 Lakhs 
+          </div>
+          <div class="col-lg-12 mt-2">
+            <span class="color-blue font-weight-bold">Space Required:</span> 150 SF 
+          </div>
+          <div class="col-lg-12 mt-2">
+            <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> Address:</span> Morbi
+          </div> 
+        <div class="col-lg-12 mt-3">
+          <div class="row brand-box-footer py-2">           
+              <div class="col-lg-4">
+                <img src="../../../assets/images/icon-verified.png" alt="" class="float-left" style="width: 80px;">            
+              </div>
+              <div class="col-lg-4 text-center">
+                <button class="btn btn-default bg-orange text-white mt-2">View Profile</button>
+              </div>
+              <div class="col-lg-4 text-center">
+                <button class="btn btn-default bg-orange text-white mt-2">Send Enquiry</button>
+              </div>             
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div> -->
+ 
+  
+        <div class="col-lg-12">
+          <div class="box-premium-brand mb-4" *ngFor="let item of premiumCollection; let i = index">
+            <div class="col-lg-12">
+            <div class="row">
+              <!-- <div class="col-lg-12"> -->
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                  <div class="text-center"><img src="../../../assets/images/sponserd.png" class="w-100 brandImg" alt="" /></div>
+                  <div class="text-center">
+                    <img [src]="item.brandLogo" class="brandLogoImg mt-sm-2" alt="">
+                  </div>
+                </div>
+                <div class="col-lg-8 p-0 col-md-6 col-sm-12 col-xs-12 product-keys">
+                  <h5 class="text-center color-blue text-uppercase mt-2 font-weight-bolder">{{item.companyName}}</h5>
+                  <div class="box-premium-brand py-2 px-3" style="border-width: 1px;">
+                    <h6 class="font-weight-bolder color-blue text-center ">Product Offering</h6>
+                    <p>{{item.productsKeywords}}</p>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 text-center">
+                  <img src="./../../../assets/images/premium-logo.png" class="w-100 mt-2 brandImg mx-auto mt-sm-4" />
+                </div>
+              <!-- </div> -->
+            </div>
+          </div>          
+         
+            <div class="col-lg-12">
+            <div class="row my-3">
+              <div class="col-lg-12 mt-2">
+                <span class="color-blue font-weight-bold">Investment:</span> {{item.investmentRequired}}
+              </div>
+              <div class="col-lg-12 mt-2">
+                <span class="color-blue font-weight-bold">Space Required:</span> {{ item.spaceRequired }}
+              </div>
+              <div class="col-lg-12 mt-2">
+                <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> Address:</span>  {{item.brandPrimaryAddress}}
+              </div>
+              <div class="col-lg-12 mt-2">
+                <i class="fa fa-phone-square float-left  mt-1 color-blue" style="font-size: 30px;" aria-hidden="true"></i>
+                <span class="float-left ml-2 mt-2 color-blue">{{item.inquiryNumber}}</span>
+              </div>
+              <!-- <div class="col-lg-12">
+                <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> State:</span> {{ item.stateName }}
+              </div> -->
+            </div>
+          </div>
+  
+          <div class="col-lg-12">
+            <div class="row brand-box-footer py-2">
+              <div class="col-5 text-left">
+                <!-- <button class="btn btn-default bg-orange text-white mt-2" (click)="openKnowMore(item.id)">View Profile</button> -->
+                <a [routerLink]="['/knowmore', item.id ]" class="btn btn-default bg-orange text-white mt-2">View Profile</a>
+              </div>
+
+                <div class="col-2 text-center p-0">
+                  <img src="../../../assets/images/icon-verified.png" alt="" class="w-xs-100" style="width: 70px;">                 
+                </div>
+                
+                <div class="col-5 text-right">
+                  <button class="btn btn-default bg-orange text-white mt-2" (click)="openDialog('sendenquiry',[item.id, item.brandOwnerEmail, item.brandOwner, item.brandOwnerContactNumber])">Send Inquiry</button>
+                </div>             
+            </div>
+          </div>
+          </div>
+        </div>
+
+          <div class="col-lg-12">
+            <div class="row my-flex-card">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let item of standardCollection; let i = index">
+            <div class="box-standard-brand card">
+             
+              <div class="row m-0">
+                <!-- <div class="col-lg-12"> -->
+                  <div class="col-lg-12">
+                    <h5 class="color-blue mt-2 font-weight-bolder">{{item.companyName}}</h5>                
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="row">
+                    <div class="text-center col-lg-3"><img [src]="item.brandLogo" class="card-img" alt=""></div>
+                    <div class="col-lg-9">                
+                        <h6 class="font-weight-bolder color-blue ">Product Offering</h6>
+                        <p>{{item.productsKeywords}}</p>
+                      
+                    </div>
+                  </div>
+                  </div>
+                  
+                <!-- </div> -->
+              </div>
+              <div class="row m-0" style="height: 100%;">
+                <div class="col-lg-12">
+              <p>
+                <span class="color-blue font-weight-bold">Investment:</span> {{item.investmentRequired}}
+              </p>
+            <p>
+                <span class="color-blue font-weight-bold">Space Required:</span> {{ item.spaceRequired }} 
+            </p>
+              <p class="mt-2">
+                <span class="color-blue font-weight-bold"><i class="fa fa-map-marker" aria-hidden="true"></i> Address:</span> {{item.brandPrimaryAddress}}
+              </p> 
+            </div>
+            </div>   
+           
+              <div class="row brand-box-footer py-2 m-0">    
+                  <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 text-left">
+                    <!-- <button class="btn btn-default bg-orange text-white mt-2" (click)="openKnowMore(item.id)">View Profile</button> -->
+                    <a [routerLink]="['/knowmore', item.id ]" class="btn btn-default bg-orange text-white mt-2">View Profile</a>
+                  </div>
+
+                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <img src="../../../assets/images/icon-verified.png" alt="" class="float-left" style="width: 70px;">            
+                  </div>
+                  
+                  <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6 text-right col-6">
+                    <button class="btn btn-default bg-orange text-white mt-2" (click)="openDialog('sendenquiry',[item.id, item.brandOwnerEmail, item.brandOwner, item.brandOwnerContactNumber])">Send Inquiry</button>
+                  </div>             
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 mb-2" *ngFor="let item of randomNormalCollection; let i = index">
+            <div class="card mb-3" >
+              <div class="row no-gutters" style="padding:10px">
+                <div class="col-lg-12 mb-2 font-weight-bolder color-blue">{{item.companyName}}</div>
+                <div class="col-lg-12">
+                  <div class="row">
+                <div class="col-md-3 brand-container cursor-pointer" (click)="openKnowMore(item.id)">
+                  <!-- <div class="my-2 txt-heading text-capitalize">
+                    {{item.companyName}}
+                  </div> -->
+                    <img [src]="item.brandLogo" class="card-img" alt="...">             
+                </div>
+                <div class="pull-left col-md-9 pl-3">
+                  <p>Products Offering:</p>
+                  <p style="color:grey">{{item.productsKeywords}}</p>
+                </div>
+                </div>
+              </div>
+              </div>
+              <div class="row" style="padding:10px; height: 100%;">
+                <div class="col-md-12">
+                  <p>Investment <i class="fa fa-inr" aria-hidden="true"></i>: {{item.investmentRequired}}</p>
+                  <p>Space Available: {{ item.spaceRequired }}</p>              
+                  
+                  <p>Address: <i class="fa fa-map-marker"></i>
+                    {{item.brandPrimaryAddress}}
+                  </p>
+                </div>
+              </div>
+              <div class="row" style="padding:10px">
+                <div class="col-md-12">
+                  <a [routerLink]="['/knowmore', item.id ]" class="btn btn-primary">Know more</a>
+                  <!-- <button class="btn btn-primary" (click)="openKnowMore(item.id)">Know more</button> -->
+                  <div class="pull-right">
+                    <button class="btn btn-primary" (click)="openDialog('sendenquiry',[item.id, item.brandOwnerEmail, item.brandOwner, item.brandOwnerContactNumber])">Send Inquiry</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+        </div>
+          </div>
+ 
+   
+      <!-- <div class="col-sm-6 mb-2" *ngFor="let item of collection; let i = index">
+        <div class="card mb-3" >
+          <div class="row no-gutters" style="padding:10px">
+            <div class="col-md-3 brand-container cursor-pointer" (click)="openKnowMore(item.id)">
+              <div class="my-2 txt-heading text-capitalize">
+                {{item.companyName}}
+              </div>
+                <img [src]="item.brandLogo" class="card-img" alt="...">             
+            </div>
+            <div class="pull-left col-md-9 pl-3">
+              <p>Products Offering:</p>
+              <p style="color:grey">{{item.productsKeywords}}</p>
+            </div>
+
+          </div>
+          <div class="row" style="padding:10px; height: 100%;">
+            <div class="col-md-12">
+              <p>Investment <i class="fa fa-inr" aria-hidden="true"></i>: {{item.investmentRequired}}</p>
+              <p>Space Available: {{ item.spaceRequired }}</p>              
+              
+              <p>Address: <i class="fa fa-map-marker"></i>
+                {{item.brandPrimaryAddress}}
+              </p>
+            </div>
+          </div>
+          <div class="row" style="padding:10px">
+            <div class="col-md-12">
+              <button class="btn btn-primary" (click)="openKnowMore(item.id)">Know more</button>
+              <div class="pull-right">
+                <button class="btn btn-primary" (click)="openDialog('sendenquiry',item.id)">Send Enquiry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+  </div>
+</div>

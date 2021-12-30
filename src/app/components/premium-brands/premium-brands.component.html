@@ -1,0 +1,23 @@
+<div class="ContainerPremiumBrands">
+    <div class="ExplorePremiumBrands txt-dark-blue">
+        <strong>Brands Associated With Us</strong>
+    </div>
+    <div class="row mrb10px" *ngIf="brandAssosiatedWithUsArrToDisplay.length == 0">
+        <div class="col-12 " style="height: 300px;">
+            <div class="text-center">
+                <div class="spinner-border"></div>
+                <span>Please wait ...</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mrb10px" *ngFor="let brandRow of brandAssosiatedWithUsArrToDisplay">
+        <div class="col-2" *ngFor="let brand of brandRow">
+            <a [routerLink]="['../knowmore', brand.brandId ]">
+                <img class="img-thumbnail" height="300px" [src]="brand.brandLogo" />
+                <label class="alingCenter">
+                  {{brand.companyName}}
+                </label>
+            </a>
+        </div>
+    </div>
+</div>

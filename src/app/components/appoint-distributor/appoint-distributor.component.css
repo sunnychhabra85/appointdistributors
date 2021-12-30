@@ -1,0 +1,28 @@
+span.selected-item {
+    max-width: auto !important;
+}
+.preview-images{
+    overflow-x: auto;
+    width: 100%;
+}
+.image-delete{
+    width: 80px;
+    color: blue;
+    text-align: center;
+}
+
+.required {
+    color: red;
+}
+  
+.displayStates{
+    list-style: none;
+    float: left;
+    clear: both;
+    /* width:250px;     */
+}
+
+.color-blue{
+    color: #090D6E;
+    margin: 0 0 5px 0;
+}

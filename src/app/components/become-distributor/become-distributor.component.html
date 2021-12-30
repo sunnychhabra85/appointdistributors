@@ -1,0 +1,215 @@
+<form class="form-horizontal" [formGroup]="becomeDistributorForm" (ngSubmit)="becomeDistributorSubmit()">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Become Distributor
+        </div>
+        <div class="card-body">
+            <!-- <div class="form-group row">
+                <label class="control-label col-sm-2" for="brandName">Brand Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="brandName" formControlName="brandName"
+                        placeholder="Enter brand name" name="brandName" (blur)="logValidationErrors()"
+                        [ngClass]="{'is-invalid': formErrors.brandName}">
+                    <span class="invalid-feedback" *ngIf="formErrors.brandName">
+                        {{formErrors.brandName}}
+                    </span>
+                </div>
+            </div> -->
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="categories">Products for Distributorship<span class="required">*</span>:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="products" formControlName="products"
+                        placeholder="Enter products' names (, seperated)" name="products"
+                        (blur)="logValidationErrors()">
+                    <span class="invalid-feedback" *ngIf="formErrors.products">
+                        {{formErrors.products}}
+                    </span>
+                    <!-- <ng-multiselect-dropdown formControlName="products"
+                                        [placeholder]="'Select one or more products'" [settings]="productsSettings"
+                                        [data]="products">
+                                    </ng-multiselect-dropdown> -->
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="categories">Business Categories:</label>
+                <div class="col-sm-9">
+                    <!-- <ng-multiselect-dropdown formControlName="categories"
+                        [placeholder]="'Select one or more categories'" [settings]="categoriesSettings"
+                        [data]="categories" [ngClass]="{'is-invalid': formErrors.categories}" (onDropDownClose)="logValidationErrors()" >
+                    </ng-multiselect-dropdown>
+                    <span class="invalid-feedback" style="display: block;">
+                        {{formErrors.categories}}
+                    </span> -->
+                    <select class="form-control" id="categories" formControlName="categories"
+                        [ngClass]="{'is-invalid': formErrors.categories}" (blur)="logValidationErrors()">
+                        <option value="" disabled>Select</option>
+                        <option *ngFor="let category of categories" [value]="category.id">
+                            {{category.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="investmentAmount">Investment Budget:</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="investmentAmount" formControlName="investmentAmount"
+                        [ngClass]="{'is-invalid': formErrors.investmentAmount}" (blur)="logValidationErrors()">
+                        <option value="0" disabled>Select</option>
+                        <option *ngFor="let invRange of investmentRanges" [value]="invRange.id">
+                            {{invRange.name}}
+                        </option>
+                    </select>
+                </div>
+                <!-- <div class="col-sm-4">
+                    <input type="text" class="form-control" id="minInvestmentAmount" formControlName="minInvestmentAmount"
+                        placeholder="Enter min investment amount in lacs" name="minInvestmentAmount" (blur)="logValidationErrors()"
+                        [ngClass]="{'is-invalid': formErrors.minInvestmentAmount}" maxlength="6">
+                    <span class="invalid-feedback" *ngIf="formErrors.minInvestmentAmount">
+                        {{formErrors.minInvestmentAmount}}
+                    </span>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="maxInvestmentAmount" formControlName="maxInvestmentAmount"
+                        placeholder="Enter max investment amount in lacs" name="maxInvestmentAmount" (blur)="logValidationErrors()"
+                        [ngClass]="{'is-invalid': formErrors.maxInvestmentAmount}" maxlength="6">
+                    <span class="invalid-feedback" *ngIf="formErrors.maxInvestmentAmount">
+                        {{formErrors.maxInvestmentAmount}}
+                    </span>
+                </div> -->
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="spaceRequired">Space Available (Sq Ft):</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="spaceRequired" formControlName="spaceRequired"
+                        placeholder="Enter space available (Sq Ft)" name="spaceRequired" (blur)="logValidationErrors()"
+                        [ngClass]="{'is-invalid': formErrors.spaceRequired}">
+                    <span class="invalid-feedback" *ngIf="formErrors.spaceRequired">
+                        {{formErrors.spaceRequired}}
+                    </span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="experiance">Experiance:</label>
+                <div class="col-sm-3">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" value="1" formControlName="experianceType"
+                                class="form-check-input" (click)="toggleExperienceTextBox(1)">Fresher
+                        </label>
+                    </div>
+                    <div class="form-check-inline float-right">
+                        <label class="form-check-label">
+                            <input type="radio" value="2" formControlName="experianceType"
+                                class="form-check-input" (click)="toggleExperienceTextBox(2)">Experienced
+                        </label>
+                    </div>                    
+                    <span class="invalid-feedback" *ngIf="formErrors.experianceType">
+                        {{formErrors.experianceType}}
+                    </span>
+                </div>
+                <div class="col-sm-3" *ngIf='hideExperienceTextBox'>
+                    <!-- <input type="text" class="form-control" id="experianceYears" formControlName="experianceYears"
+                        placeholder="Enter total experience (in years)" name="experianceYears"> -->
+
+                    <select class="form-control float-left col-lg-6" id="experianceYears" formControlName="experianceYears"
+                    placeholder="Enter total experience (in years)" name="experianceYears">
+                        <option *ngFor='let in of counter(35) ;let i = index'>      
+                            {{i + 1}} 
+                        </option>
+                    </select>
+                    <span class="float-left ml-2">years</span>
+                </div>
+                <div class="col-sm-3">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-sm-3" for="businessNatures">Business Nature:</label>
+                <div class="col-sm-9">
+                    <ng-multiselect-dropdown formControlName="businessNatures" [placeholder]="'Business Nature'"
+                        [settings]="businessNatureMultiSelectSettings" [data]="businessNatures">
+                    </ng-multiselect-dropdown>
+                </div>
+            </div>                                    
+            <!-- <div class="form-group  row">
+                <label class="control-label col-sm-3" for="pan">PAN:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="pan" formControlName="pan" placeholder="Enter PAN"
+                        name="pan" (blur)="logValidationErrors()" [ngClass]="{'is-invalid': formErrors.pan}">
+                    <span class="invalid-feedback" *ngIf="formErrors.pan">
+                        {{formErrors.pan}}
+                    </span>
+                </div>
+            </div> -->
+            <!-- <div class="form-group row">
+                <label class="control-label col-sm-2" for="gstNumber">GST:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="gstNumber" formControlName="gstNumber"
+                        placeholder="Enter GST number" name="gstNumber" (blur)="logValidationErrors()"
+                        [ngClass]="{'is-invalid': formErrors.gstNumber}">
+                    <span class="invalid-feedback" *ngIf="formErrors.gstNumber">
+                        {{formErrors.gstNumber}}
+                    </span>
+                </div>
+            </div> -->            
+            <!-- <div class="form-group row">
+                <label class="control-label col-sm-3" for="distributorshipType">Distributorship Type:</label>
+                <div class="col-sm-2">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="countrywise" value="1" formControlName="countrywise"
+                            name="countrywise" (change)='onCountryChecked($event)'>
+                        Country-wise
+                    </label>
+                </div>
+                <div class="col-sm-2">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="regionwise" value="2" formControlName="regionwise" name="regionwise"
+                            (change)='onRegionChecked($event)'>
+                        Region-wise
+                    </label>
+                </div>
+                <div class="col-sm-3">
+                    <ng-multiselect-dropdown formControlName="regions" [placeholder]="'Regions'"
+                        [settings]="locationMultiSelectSettings" [data]="regions" [(ngModel)]="selectedRegions">
+                    </ng-multiselect-dropdown>
+                </div>
+
+            </div> -->
+            <!-- <div class="form-group row">
+                <label class="control-label col-sm-3" for="distributorshipType">Location For Distributorship:</label>
+                
+                <div class="col-sm-3">
+                    <ng-multiselect-dropdown formControlName="states" [placeholder]="'States'"
+                        [settings]="locationMultiSelectSettings" [data]="states" [(ngModel)]="selectedStates">
+                    </ng-multiselect-dropdown>
+                </div>               
+               
+                <div class="col-sm-3">
+                    <ng-multiselect-dropdown formControlName="cities" [placeholder]="'Cities'"
+                        [settings]="locationMultiSelectSettings" [data]="cities" [(ngModel)]="selectedCities">
+                    </ng-multiselect-dropdown>
+                </div>
+            </div> -->
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <textarea class="form-control" id="description" rows="3" formControlName="description"
+                        placeholder="Comments" name="description"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button mat-button matStepperPrevious class="btn btn-primary"
+                        style="margin-right: 20px;">Previous</button>
+                    <input type="submit" class="btn btn-primary" [disabled]="becomeDistributorForm.invalid"
+                        value="Submit" style="margin-right: 20px;">
+                    <!-- <input type="button" class="btn btn-secondary pl-2" (mousedown)="cancelRequest()" value="Cancel"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+<!-- <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please Wait...</p>
+</ngx-spinner> -->

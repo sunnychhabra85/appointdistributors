@@ -1,0 +1,322 @@
+<div class="card know-more-page">
+  <div class="card-body pb-1">
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="pull-left h5">
+          {{BrandData?.companyName}}
+        </h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-3 pr-lg-0 text-center">        
+        <div class="imgthumbnail float-left w-100 my-2" style="border: 1px solid #999; border-radius: 4px;">
+          <img class="brand-logo" [src]="BrandData?.brandLogo" />
+        </div>
+      </div>
+      <div class="col-lg-10 col-md-9">
+
+        <div class="row">
+          <!-- <div class="col-md-12">
+            <h3 class="pull-left">
+              {{BrandData?.companyName}}
+            </h3>
+          </div> -->
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2 pr-lg-0">
+            <div class="card">
+              <div class="card-body text-center data-height">
+              <span class="d-block">Brand Name:</span>
+              {{BrandData?.name}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2 pr-lg-0">
+            <div class="card">
+              <div class="card-body text-center data-height">
+                <span class="d-block">GST No.: </span>
+                {{BrandData?.gstNumber}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2">
+            <div class="card">
+              <div class="card-body text-center data-height">
+                <span class="d-block">Establisment Year:</span>
+                {{BrandData?.establishmentYear}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2 pr-lg-0" >
+            <div class="card">
+              <div class="card-body text-center data-height">
+                <span class="d-block">Investment Required :</span>
+                {{BrandData?.investmentRequired}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2 pr-lg-0">
+            <div class="card">
+              <div class="card-body text-center data-height">
+                <span class="d-block">Space Required:</span>
+                {{BrandData?.spaceRequired}}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2" >
+            <div class="card">
+              <div class="card-body text-center data-height">
+                <span class="d-block">No. of Employees:</span>
+                {{BrandData?.totalEmployees}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-3">
+  <div class="col-md-12">
+    <ul class="nav justify-content-center categories-menu" style="border: 1px solid lightgrey; background-color:rgba(0,0,0,0.03); border-radius: 20px;">
+      <li class="nav-item">
+        <a (click)="scroll(CompanyProfile)" class="nav-link">Company Profile</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scroll(ProductRange)" class="nav-link">Our Product Range</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scroll(InvestmentRequired)" class="nav-link">Investment Required</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="scroll(DistributorsBenefits)" class="nav-link">Distributor benefits</a>
+      </li>    
+      <li class="nav-item">
+        <a (click)="scroll(ContactUs)" class="nav-link">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="pull-left mb-3 w-100">
+  <div class="row">
+    <div id="LatestDistributorsLeads" class='col-12'>
+      <!-- <ngb-carousel>
+        <ng-template *ngFor="let images of imagesArr" ngbSlide >
+          <div class="row">
+            <div class="col-lg-3 col-sm-6" *ngFor="let image of images">
+              <div class="item-box-blog">
+                <div class="item-box-blog-body">
+                  <div class="imageThumbnial">
+                    <img class="cate-slider-img" [src]="image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel> -->
+      <owl-carousel-o [options]="customOptions" id="know-more">
+        <ng-template class="slide" *ngFor="let image of _album; let i=index" carouselSlide>
+          <div class="item-box-blog">
+            <div class="item-box-blog-body">
+              <div class="imageThumbnial">
+                <!-- <img class="cate-slider-img" [src]="image" /> -->
+                <img [src]="image.thumb" (click)="open(i)"  />
+                
+                  <button class="btn btn-primary mx-auto inquiryBlock" (click)="openDialog('sendenquiry',[BrandData.id, BrandData.brandOwnerEmail, BrandData.brandOwner, BrandData.brandOwnerContactNumber])" style="width: 200px; background-color: #090d6c;">Send Inquiry</button>
+               
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+
+      <!-- <div *ngFor="let image of _albums; let i=index">
+        <img [src]="image.thumb" (click)="open(i)" />
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="pull-left mb-3 w-100">
+  <div class="card">
+    <div class="card-header" style="padding: .4rem 1.25rem; vertical-align: middle;line-height: 2em;" #CompanyProfile>
+      Company Profile
+      <button class="btn btn-primary mx-auto float-right"  (click)="openDialog('sendenquiry',[BrandData.id, BrandData.brandOwnerEmail, BrandData.brandOwner, BrandData.brandOwnerContactNumber])" style="width: 140px; padding: 3px; background-color: #090d6c;">Send Inquiry</button>
+    </div>
+    <div class="card-body" [innerHTML]="BrandData?.description">
+    </div>
+  </div>
+
+  <div class="pull-left mt-3 w-100">
+    <div class="card">
+      <div class="card-header" #ProductRange>
+        Our Product Range
+      </div>
+      <div class="card-body">
+        {{BrandData?.productsKeywords}}
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-left mt-3 w-100">
+    <div class="card">
+      <div class="card-header" #InvestmentRequired>
+        Investment Required
+      </div>
+      <div class="card-body">
+        <b>The offer to target customers</b>
+        <p [innerHTML]="BrandData?.investmentRequired">
+
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-left mt-3 w-100">
+    <div class="card">
+      <div class="card-header" #DistributorsBenefits>
+        Distributors Benefits
+      </div>
+      <div class="card-body" [innerHTML]="BrandData?.distributorsBenefits">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-left mt-3 w-100">
+    <div class="card">
+      <div class="card-header">
+        Distributors Required in
+      </div>
+      <div class="card-body">
+        <!-- <div [innerHTML]="BrandData?.distributorshipLocations.split(',').length == 35 ? 'Accross India' : BrandData?.distributorshipLocations"> -->
+          <!-- <div>
+            {{BrandData?.distributorshipLocations.split('-')[1]}}
+        </div> -->
+        <div *ngIf="BrandData?.distributorshipLocations.split('-')[0].trim() == 'Cities'">
+          {{BrandData?.distributorshipLocations}}
+        </div>
+        <div *ngIf="BrandData?.distributorshipLocations.split('-')[0].trim() == 'States'">
+        <div class="col-12" *ngIf="centralState.length>0">
+          <div class="row">
+          <div class="col-2 border"><strong>Central</strong></div>
+          <div class="col-10 border" >
+            <span *ngFor="let state of centralState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+      </div>
+      <div class="col-12" *ngIf="westState.length>0">
+        <div class="row" >
+          <div class="col-2 border"><strong>West</strong></div>
+          <div class="col-10 border">
+            <span *ngFor="let state of westState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+     </div>
+      <div class="col-12"  *ngIf="eastState.length>0">
+        <div class="row">
+          <div class="col-2 border"><strong>East</strong></div>
+          <div class="col-10 border">
+            <span *ngFor="let state of eastState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+        </div>
+        <div class="col-12" *ngIf="northState.length>0">
+        <div class="row" >
+          <div class="col-2 border"><strong>North</strong></div>
+          <div class="col-10 border">
+            <span *ngFor="let state of northState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+      </div>
+      <div class="col-12"  *ngIf="southState.length>0">
+        <div class="row">
+          <div class="col-2 border"><strong>South</strong></div>
+          <div class="col-10 border">
+            <span *ngFor="let state of southState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+        </div>
+        <div class="col-12" *ngIf="UTState.length>0">
+        <div class="row" >
+          <div class="col-2 border"><strong>Union Territories</strong></div>
+          <div class="col-10 border">
+            <span *ngFor="let state of UTState; let i = index">
+              {{state}},       
+            </span> 
+          </div>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <div class="pull-left mt-3 w-100">
+    <div class="card">
+      <div class="card-header">
+        Products USP’s
+      </div>
+      <div class="card-body">
+        <b>Company USPs:</b>
+        <div [innerHTML]="BrandData?.usp">
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="pull-left mt-3 w-100" id="ContactDetails" #ContactUs>
+    <div class="card">
+      <div class="card-header">
+        Contact Details
+      </div>
+      <div class="card-body">
+        <table border="1" cellpadding="3px" class="w-100" style="border-collapse: collapse;border-color: lightgray;">
+          <tr>
+            <td><b>Name</b></td>
+            <td>{{BrandData?.brandOwner}}</td>
+          </tr>
+          <tr>
+            <td><b>Company Name</b></td>
+            <td>{{BrandData?.companyName}}</td>
+          </tr>
+          <tr>
+            <td><b>Address</b></td>
+            <td>{{BrandData?.brandPrimaryAddress}}</td>
+          </tr>
+          <tr>
+            <td><b>Mobile</b></td>
+            <!-- <td>{{BrandData?.brandOwnerContactNumber}}</td> -->
+            <td>{{BrandData?.inquiryNumber}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-left mb-3 w-100">
+  <div class="row text-center">
+    <!-- <div class="col-md-6 mb-2">
+      <button class="btn btn-primary mr-1 w-100" (click)="openDialog('customercare')">Contact Us</button>
+    </div>
+    <div class="col-md-6"> -->
+      <!-- <button class="btn btn-primary mx-auto" (click)="openDialog('postrequirements')" style="width: 200px; background-color: #090d6c;">Send Inquiry</button> -->
+      <button class="btn btn-primary mx-auto" (click)="openDialog('sendenquiry',[BrandData.id, BrandData.brandOwnerEmail, BrandData.brandOwner, BrandData.brandOwnerContactNumber])" style="width: 200px; background-color: #090d6c;">Send Inquiry</button>
+    <!-- </div> -->
+  </div>
+</div>

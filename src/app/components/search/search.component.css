@@ -1,0 +1,169 @@
+.main {
+    width: 100%;
+    padding: 15px;;
+    /* height: 100px;
+    margin: -25px 0 0 0; */
+    /*background-color: #fff !important;
+    z-index: 100;
+     box-shadow: 0 8px 6px -6px black;
+    border-radius: 8px; */
+}
+
+.form-group{
+    margin-bottom: 0px !important;
+}
+
+.col-3, col-2, .col-8{
+    padding: 0 !important;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    /* padding:10px; */
+}
+
+.hamburger{
+  font-size: 30px;
+  color: #464545;
+}
+.mobo-menu{
+  margin:0 -15px;
+  padding:0;
+}
+
+.mobo-menu li {
+  padding:0;
+}
+
+.mobo-menu li a{
+  border-bottom:1px solid #ddd;
+  padding:10px 15px;
+  color: #7d7676;
+}
+
+.mobo-menu li:hover a:hover{
+  background:#ddd;
+  color: #FFF;
+}
+
+.mobo-menu li:last-child, .cate-slide li:last-child {
+  margin-bottom:20px;
+}
+
+.main-menu-mobo{
+  margin:0;
+  padding:0;
+}
+
+.main-menu-mobo li{
+  margin:0;
+  padding:0;
+}
+
+.main-menu-mobo li:first-child a{
+  padding-left:0;
+  color:#048c8a;
+  font-size:1.0rem;
+  text-transform:Uppercase;
+  font-weight:bold;
+}
+
+.main-menu-mobo li:last-child a{
+  padding-right:0;
+  color: #7d7676;
+}
+
+.cate-slide{
+  margin:0 -15px; padding:0;
+
+}
+
+.cate-slide li {
+  margin:0; padding:0;
+  width:100%;
+}
+
+.cate-slide li a {
+  border-bottom:1px solid #ddd;
+  padding:10px 15px;
+  color: #7d7676;
+}
+
+.cate-slide li a:hover {
+  background:#ddd;
+  color: #FFF;
+}
+
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow: unset;
+  background-color: rgba(0,0,0,0.5);
+  height: auto;
+  display: none;
+}
+
+.modal-body .sub-categories{
+  column-count: 2;
+}
+.modal-body .sub-categories li{
+  font-size: 14px;
+  width: 100%;
+}
+.modal-body .sub-categories li a{
+  color: #999;
+}
+
+@media screen and (min-width:768px) and (max-width: 1150px) {
+  .btn-success{
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:768px){
+  .modal-category{
+    display: none !important;
+  }
+}
+@media screen and (min-width:300px) and (max-width: 767px) {
+  .my-search-3{margin:1.0rem 0;}
+  .mb-mobo-2{margin-bottom:1.0rem}
+  .main-menu-mobo li:first-child a{
+    font-size:0.75rem;
+  }
+  
+}
+
+
+
+
+@media only screen and (max-width: 299px) {
+  .main-menu-mobo li:first-child a, .main-menu-mobo li:last-child a{
+    font-size:0.74rem;
+  }
+  .my-search-3{margin:1.0rem 0;}
+  .mb-mobo-2{margin-bottom:1.0rem}
+  .logo-img{width:75%}
+}

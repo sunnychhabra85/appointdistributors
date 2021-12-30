@@ -1,0 +1,33 @@
+<div class="pull-left searchArea">    
+    
+    <app-catagory-onload [catagoriesOnLoad]="catagoriesOnLoad"></app-catagory-onload>    
+    <div class="row">
+        <div class="col-lg-12 ">
+                <app-carousel [distributorLeads]= "distributorLeads" [allDistributorsLeads]="allDistributorsLeads"></app-carousel>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <app-premium-brands></app-premium-brands>
+        </div>
+    </div>
+    <div class="row p-0">
+        <div class="ask-expert mb-3 mt-4 col-lg-12">
+            <app-ask-experts></app-ask-experts>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-12 mt-1">
+            <app-categories [catagories]="catagories"></app-categories>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class= "col-lg-12">
+    <app-reviewslider></app-reviewslider>    
+    </div>
+    </div>
+    
+    <div class="bottom-space"></div>    
+</div>

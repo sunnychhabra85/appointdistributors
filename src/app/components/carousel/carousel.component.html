@@ -1,0 +1,106 @@
+<div class="ExplorePremiumBrands txt-dark-blue">
+    <Strong>Latest Distributors Leads</Strong>
+</div>
+<div class="container cta-100 ">
+    <div class="container">
+        <div class="row">
+            <div id="LatestDistributorsLeads" class='col-12 p-0'>
+                <!-- <ngb-carousel> -->
+                    <!-- <owl-carousel-o [options]="customOptions">
+                    <ng-template class="slide" *ngFor="let rowItem of distributorLeads" carouselSlide> -->
+                        <div class="col-12 m-0 p-0">
+                            <owl-carousel-o [options]="customOptions">
+                            <ng-template class="slide" *ngFor="let colItems of allDistributorsLeads" carouselSlide>
+                                <div class="item-box-blog">
+                                    <div class="item-box-blog-body" style="font-size: 10px;">
+                                        <!--Heading-->
+                                        <!-- <div class="item-box-blog-heading">
+                                            <a href="#" tabindex="0">
+                                                <b>Client wants to take distributorship</b>
+                                            </a>
+                                        </div> -->
+                                        <!--Data-->
+                                        <div class="item-box-blog-data" style="padding: px 15px;">
+                                            <p class="text-left">
+                                                <i class="fa fa-user" aria-hidden="true"></i> {{ colItems.brandOwner ==
+                                                null ? 'Not
+                                                provided' : colItems.brandOwner }}
+                                                <!-- , <i class="fa fa-comments-o"></i>
+                                                Comments(3) -->
+                                            </p>
+                                        </div>
+                                        <!--Text-->
+                                        <div class="item-box-blog-text">
+                                            <p>Interested in : {{ colItems.productsKeywords }}</p>
+                                            <p *ngIf="colItems.experianceYears > 0 ">Experience : {{ colItems.experianceYears }} years</p>
+                                            <div [ngSwitch]="colItems.investmentRangeId">
+                                                <p *ngSwitchCase="1">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 50k to 1 Lac</p>
+                                                <p *ngSwitchCase="2">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 1 Lakh to 3 Lac</p>
+                                                <p *ngSwitchCase="3">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 3 Lakh to 5 Lac</p>
+                                                <p *ngSwitchCase="4">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 5 Lakh to 10 Lac</p>
+                                                <p *ngSwitchCase="5">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 10 Lakh to 20 Lac</p>
+                                                <p *ngSwitchCase="6">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 30 Lakh to 40 Lac</p>
+                                                <p *ngSwitchCase="6">Investment <i class="fa fa-inr" aria-hidden="true"></i> : 40 Lakh to 50 Lac</p>
+                                            </div>
+                                            <p>Space Available : {{ !colItems.spaceRequired ? '100 S.F.' :
+                                                colItems.spaceRequired }}</p>
+                                            <p>Location : <i class="fa fa-map-marker"></i> {{
+                                                colItems.distributorshipLocations }}</p>
+                                            <!-- <label>Client name : {{ colItems.brandOwner == null ? 'Not provided' : colItems.brandOwner  }}</label>
+                                            <label>City (State) : {{ colItems.brandPrimaryAddress == null ? 'Not provided' : colItems.brandPrimaryAddress  }}</label>
+                                            <label>Client wants to take distributorship :  {{colItems.productsKeywords}}</label>
+                                            <label>Contact No : 9579306880 </label>
+                                            <label>Experienced : {{colItems.experianceType}}</label>
+                                            <div style="clear: both;"></div>
+                                            <label>Investment : {{colItems.investmentRequired}} </label> -->
+                                            <!-- <label>Company name : AP </label> -->
+                                            <!-- <label>E- mail id : aphapale2@gmail.com</label> -->
+                                        </div>
+                                        <div class="mt"> <a tabindex="0" class="btn bg-blue-ui white read"
+                                                (click)="openDistibutorsLeadData(colItems.id)">View more</a> </div>
+                                        <!--Read More Button-->
+                                    </div>
+                                </div>
+                            </ng-template>
+                            </owl-carousel-o>
+                        </div>
+                    <!-- </ng-template>
+                </owl-carousel-o> -->
+                <!-- </ngb-carousel> -->
+            </div>
+
+            <!-- <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/92c952" alt="img 1">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/771796" alt="img 2">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/24f355" alt="img 3">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/d32776" alt="img 4">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/f66b97" alt="img 5">
+                  </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                  <div class="slide">
+                    <img src="https://via.placeholder.com/600/56a8c2" alt="img 6">
+                  </div>
+                </ng-template>
+              </owl-carousel-o> -->
+        </div>
+    </div>
+</div>

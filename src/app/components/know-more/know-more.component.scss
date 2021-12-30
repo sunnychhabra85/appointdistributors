@@ -1,0 +1,113 @@
+.distributordetails{
+    width: 225px;
+    border: 1px solid lightgrey;
+    min-height: 60px;
+    text-align: center;
+    margin: 0 10px 20px 0px;
+    padding: 5px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1025px;
+}
+
+.seperator{
+    border-right: 1px solid lightgrey;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.imageThumbnial{
+    border: 1px solid lightgrey;
+    padding: 2px;
+    height: 300px;
+    line-height: 300px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+table td {
+    padding: 5px;
+    /* Apply cell padding */
+  }
+  .data-height{min-height:74px;}
+  .brand-logo{
+    width: 87%;
+    max-height: 167px;
+    // height: 225px;
+  }
+
+  .categories-menu li a{
+    color: #212529;
+    position: relative;
+  }
+
+  .categories-menu li a:after {
+    content: "";
+    background: lightgray;
+    position: absolute;
+    top: 0;
+    width: 0.5px;
+    height: 41px;
+    left: 0px;
+  }
+  .categories-menu li:first-child a:after {
+    content: none;
+  }
+  .categories-menu li a:hover{
+    text-decoration: underline;
+  }
+  .cate-slider-img{width: 70%; /*height: 100%; /*height: 200px;*/}
+  .know-more-page .card-body{
+    padding: 0.8rem;
+  }
+
+  .h5{
+    color: #080c6d!important;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .imgthumbnail{
+    height: 170px;
+        line-height: 165px;
+  }
+  .lightboxOverlay{
+    position: fixed !important;
+  }
+  @media screen and (min-width:279px) and (max-width: 767px) {
+    .categories-menu li a:after {
+      content: none;
+    }
+    .brand-logo{
+      width: auto;
+      max-height: 155px;
+      // height: 225px;
+    }
+  }
+
+  .nav-link{
+    padding: 0.5rem 3rem !important;
+  }
+
+  // .owl-theme .owl-nav{
+  //   position: absolute;
+  //   top:28%;
+  //   width: 100%;
+  // }
+  // .owl-theme .owl-nav .owl-prev{
+  //   float: left;
+  //   margin-left: -18px;
+  // }
+  // .owl-theme .owl-nav .owl-next{
+  //   float: right;
+  //   margin-right: -18px;
+  // }
+  // .owl-theme .owl-dots, .owl-theme .owl-nav{
+  //   margin-top: 10px;
+  // }

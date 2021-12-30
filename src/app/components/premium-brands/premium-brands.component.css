@@ -1,0 +1,73 @@
+.ContainerPremiumBrands{
+    width:100%;
+    /*height: 450px;
+    border: 1px solid black;*/
+    margin: 25px 0 0 0;
+}
+
+.ExplorePremiumBrands{
+    font-size: 20px;
+    width: 100%;
+    margin: 5px 0 5px 5px;
+}
+
+.imageFrame{
+    float: left;
+    width: 175px;
+    height: 172px;
+    border: 1px solid #dcdee3;
+    margin: 5px 5px;
+    border-radius: 10px;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+}
+
+.mrb10px{
+    margin-bottom: 10px;
+}
+
+
+.alingCenter{
+    width:100%;
+    text-align: center !important;
+}
+
+.img-thumbnail{
+    height:150px;
+    border-radius: 30%;
+}
+a label{
+  color:  rgb(90, 84, 84) !important;
+}
+
+a label:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color:#fc6600 !important;
+}
+@media only screen and (max-width: 299px) {
+  .ContainerPremiumBrands .col-2{flex: 50%; max-width: 50%; padding:5px;}
+  .row{margin:0 auto}
+ }
+@media screen and (max-width: 481px) {
+ .ContainerPremiumBrands .col-2{flex: 50%; max-width: 50%;}
+ .row{
+     flex-flow: row wrap;
+     justify-content: space-around;
+     width: 100%;
+ }
+}
+@media screen and (min-width:482px) and (max-width: 1023px) {
+
+    .ContainerPremiumBrands .col-2{flex: 33%; max-width:33%;
+       }
+    .row{
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    }
+
+   }
